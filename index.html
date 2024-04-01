@@ -31,6 +31,18 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the array.
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
+      let result = 0
+
+      for (let index = 0; index < nums.length; index++){
+       let element = nums [index]
+        if (typeof element === 'number'){
+          if (element === 13){ 
+          return "I'm too superstitious!"
+        }
+          result += element
+        }
+      }
+      return result 
 
     }
 
@@ -40,17 +52,40 @@
     // stripVowels('Lady Gaga') // should return 'Ldy Gg'
     // ❗ Notes:
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
-    function stripVowels(str) {
-
+    
+    function stripVowels(str) { 
+      const newArr = str.split('')
+      let result = []
+      for (let i = 0; i < newArr.length; i++){
+        const char = newArr[i]
+        if (char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u'){
+         result.push(char)
+        }
+      }  
+      return result.join('')
     }
+
 
     // 👉 CHALLENGE 3
     // 🧠 Reimplement sumNumsFor using a while loop instead of a for loop.
     // 🧠 Examples of usage:
     // sumNumsWhile([1, 2, 3]) // should return 6
     // sumNumsWhile([1, 2, 13]) // should return "I'm too superstitious!"
-    function sumNumsWhile() {
+    function sumNumsWhile(nums) {
+      let result = 0
+      let idx = 0
 
+      while (idx < nums.length){
+      let elem = nums[idx]
+        if (typeof elem === 'number'){
+          if (elem === 13){ 
+          return "I'm too superstitious!"
+        }
+          result += elem
+        }
+        idx++
+      }
+      return result
     }
 
     // 👉 CHALLENGE 4
